@@ -1,6 +1,6 @@
 # Image Crop Tool
 
-A modern, user-friendly image cropping application built with PySide6. This tool allows users to easily crop images to specific resolutions while maintaining a sleek, dark-themed interface.
+Transform your images with precision and style using this elegant image cropping tool! Built with PySide6, this application combines powerful functionality with a modern, dark-themed interface. Whether you're preparing images for social media, web design, or professional work, this tool makes it effortless to achieve pixel-perfect crops with its intuitive controls and real-time preview features. From quick presets to custom dimensions, rotate with ease and see your changes instantly – all wrapped in a sleek, user-friendly package.
 
 [中文](readme_zh.md)
 
@@ -72,6 +72,19 @@ ImageCropTool/
 ## Output
 
 Cropped images are automatically saved in the `output` directory with timestamps as filenames.
+
+## TODO
+
+- [ ] Add aspect ratio lock when resizing
+- [ ] Implement custom preset resolution management
+- [ ] Add image filters and basic adjustment features
+- [ ] Support exporting to different file formats
+- [ ] Add customizable keyboard shortcuts
+- [ ] Implement image metadata preservation
+- [ ] Add AI image expansion feature
+- [ ] Support multiple language interface
+- [ ] Support importing images from the internet (like Pixiv)
+- [ ] Add smart repair features (denoising, deblurring, enhancing clarity)
 
 ## Contributing
 
