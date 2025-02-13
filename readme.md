@@ -2,7 +2,7 @@
 
 A modern, user-friendly image cropping application built with PySide6. This tool allows users to easily crop images to specific resolutions while maintaining a sleek, dark-themed interface.
 
-![中文](readme_zh.md)
+[中文](readme_zh.md)
 
 ## Features
 
