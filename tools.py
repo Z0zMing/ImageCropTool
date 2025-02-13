@@ -19,8 +19,8 @@ from PySide6.QtGui import QPixmap, QTransform, QKeySequence, QIcon, QFont
 
 from widget.canvas import Canvas
 from widget.preview_dialog import PreviewDialog
-from ToolTips import ToolTipsButton
-from styles import Styles
+from widget.ToolTips import ToolTipsButton
+from widget.styles import Styles
 from widget.message_box import StyleMessageBox
 
 import time
