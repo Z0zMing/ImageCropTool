@@ -2,7 +2,7 @@
 
 一款基于PySide6构建的现代化、用户友好的图片裁剪应用程序。该工具允许用户轻松地将图片裁剪至特定分辨率，同时保持简洁的暗色主题界面。
 
-![应用程序截图](screenshots/main.png)
+![ZH_EN]("readme.md)
 
 ## 特性
 
@@ -33,7 +33,7 @@
 
 1. 克隆仓库：
 ```bash
-git clone https://github.com/yourusername/ImageCropTool.git
+git clone https://github.com/Z0zMing/ImageCropTool.git
 ```
 
 2. 安装依赖：

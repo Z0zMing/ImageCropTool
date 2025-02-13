@@ -2,7 +2,7 @@
 
 A modern, user-friendly image cropping application built with PySide6. This tool allows users to easily crop images to specific resolutions while maintaining a sleek, dark-themed interface.
 
-![Application Screenshot](screenshots/main.png)
+![中文](readme_zh.md)
 
 ## Features
 
@@ -33,7 +33,7 @@ A modern, user-friendly image cropping application built with PySide6. This tool
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/ImageCropTool.git
+git clone https://github.com/Z0zMing/ImageCropTool.git
 ```
 
 2. Install the required dependencies:
