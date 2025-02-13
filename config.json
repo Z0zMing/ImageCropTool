@@ -1,0 +1,8 @@
+{
+    "load_image": "Ctrl+O",
+    "crop_image": "Ctrl+Return",
+    "preview_crop": "Ctrl+P",
+    "save_crop": "Ctrl+S",
+    "rotate_left": "Ctrl+Left",
+    "rotate_right": "Ctrl+Right"
+}
