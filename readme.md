@@ -1,20 +1,34 @@
 # Image Crop Tool
 
-Transform your images with precision and style using this elegant image cropping tool! Built with PySide6, this application combines powerful functionality with a modern, dark-themed interface. Whether you're preparing images for social media, web design, or professional work, this tool makes it effortless to achieve pixel-perfect crops with its intuitive controls and real-time preview features. From quick presets to custom dimensions, rotate with ease and see your changes instantly – all wrapped in a sleek, user-friendly package.
+A versatile image cropping application with web import capabilities.
 
 [中文](readme_zh.md)
 
 ## Features
 
-- 🎯 Precise image cropping with customizable dimensions
-- 📏 Preset resolution options (720p, 1K, 2K)
-- 🔄 Image rotation (90° clockwise/counterclockwise)
-- 👁️ Real-time preview of crop selection
-- 🖼️ Preview dialog for checking the final result
-- ⌨️ Keyboard shortcuts for quick operations
-- 🎨 Modern dark theme UI
-- 🖱️ Drag-and-drop window movement
-- 🔍 Interactive selection box with resize handles
+- Load images from your computer
+- Import images directly from popular websites
+- Crop images to standard or custom resolutions
+- Rotate images
+- Preview crops before saving
+- Modern, intuitive UI
+
+## Web Image Import
+
+The application allows importing images directly from popular websites:
+
+1. Click the "Import from Web" button
+2. Select a website from the available options
+3. Browse the website or search for images
+4. Click on an image to select it
+5. The image will be automatically loaded into the application for editing
+
+## Supported Websites
+
+- Unsplash
+- Pixiv
+- Pexels
+- Flickr
 
 ## Keyboard Shortcuts
 
@@ -26,8 +40,10 @@ Transform your images with precision and style using this elegant image cropping
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.6+
 - PySide6
+- QtWebEngine support
+- Requests library
 
 ## Installation
 
@@ -38,7 +54,7 @@ git clone https://github.com/Z0zMing/ImageCropTool.git
 
 2. Install the required dependencies:
 ```bash
-pip install PySide6
+pip install PySide6 requests
 ```
 
 3. Run the application:
@@ -92,4 +108,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-[MIT License](LICENSE)
+MIT

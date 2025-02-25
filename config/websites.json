@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Unsplash",
+        "icon": "icons/unsplash.svg",
+        "url": "https://unsplash.com",
+        "search_api": "https://unsplash.com/s/photos/{query}"
+    },
+    {
+        "name": "Pixiv",
+        "icon": "icons/pixiv.svg",
+        "url": "https://www.pixiv.net",
+        "search_api": "https://www.pixiv.net/tags/{query}/illustrations"
+    },
+    {
+        "name": "Pexels",
+        "icon": "icons/pexels.svg",
+        "url": "https://www.pexels.com",
+        "search_api": "https://www.pexels.com/search/{query}"
+    },
+    {
+        "name": "Flickr",
+        "icon": "icons/flickr.svg",
+        "url": "https://www.flickr.com",
+        "search_api": "https://www.flickr.com/search/?text={query}"
+    }
+]

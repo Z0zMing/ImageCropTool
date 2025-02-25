@@ -22,6 +22,7 @@ from widget.preview_dialog import PreviewDialog
 from widget.ToolTips import ToolTipsButton
 from widget.styles import Styles
 from widget.message_box import StyleMessageBox
+from widget.web_import_dialog import WebImportDialog
 
 import time
 import json
@@ -87,6 +88,13 @@ class ImageCropper(QWidget):
         self.upLoadButton.setIconSize(QSize(24, 24))
         self.upLoadButton.setFixedSize(40, 40)
 
+        self.webImportButton = ToolTipsButton(
+            "", "Import image from web", self
+        )
+        self.webImportButton.setIcon(QIcon("icons/web-import.svg"))
+        self.webImportButton.setIconSize(QSize(24, 24))
+        self.webImportButton.setFixedSize(40, 40)
+
         self.resolution_group = QHBoxLayout()
 
         self.resolution_combo = QComboBox(self)
@@ -127,6 +135,7 @@ class ImageCropper(QWidget):
 
         button_layout = QHBoxLayout()
         button_layout.addWidget(self.upLoadButton)
+        button_layout.addWidget(self.webImportButton)
         button_layout.addWidget(self.resolution_combo)
         button_layout.addWidget(self.resolution_input)
         button_layout.addWidget(self.cropButton)
@@ -156,6 +165,7 @@ class ImageCropper(QWidget):
 
         self.load_shortcut_config()
         self.upLoadButton.clicked.connect(self.load_image)
+        self.webImportButton.clicked.connect(self.import_from_web)
         self.resolution_combo.currentIndexChanged.connect(self.on_combo_changed)
         self.rotateLeftButton.clicked.connect(lambda: self.rotate_image(-90))
         self.rotateRightButton.clicked.connect(lambda: self.rotate_image(90))
@@ -163,6 +173,7 @@ class ImageCropper(QWidget):
         self.cropButton.clicked.connect(self.crop_image)
 
         self.upLoadButton.tooltip_message.connect(self.set_tooltip_text)
+        self.webImportButton.tooltip_message.connect(self.set_tooltip_text)
         self.cropButton.tooltip_message.connect(self.set_tooltip_text)
         self.rotateLeftButton.tooltip_message.connect(self.set_tooltip_text)
         self.rotateRightButton.tooltip_message.connect(self.set_tooltip_text)
@@ -174,6 +185,7 @@ class ImageCropper(QWidget):
 
         self.setStyleSheet(Styles.MAIN_WIDGET)
         self.upLoadButton.setStyleSheet(Styles.UPLOAD_BUTTON)
+        self.webImportButton.setStyleSheet(Styles.UPLOAD_BUTTON)  # Using same style as upload button
         self.cropButton.setStyleSheet(Styles.CROP_BUTTON)
         self.rotateLeftButton.setStyleSheet(Styles.ROTATE_LEFT_BUTTON)
         self.rotateRightButton.setStyleSheet(Styles.ROTATE_RIGHT_BUTTON)
@@ -265,6 +277,23 @@ class ImageCropper(QWidget):
             pixmap = QPixmap(file_path)
             self.canvas.set_image(pixmap)
             self.enable_controls()
+
+    def import_from_web(self):
+        """Import image from web dialog"""
+        try:
+            dialog = WebImportDialog(self)
+            dialog.image_selected.connect(self.set_imported_image)
+            dialog.exec()
+        except Exception as e:
+            StyleMessageBox.critical(self, "Error", f"Error opening web import: {str(e)}")
+
+    def set_imported_image(self, pixmap):
+        """Process the image imported from the web"""
+        if not pixmap.isNull():
+            self.canvas.load_pixmap(pixmap)
+            self.enable_controls()
+        else:
+            StyleMessageBox.warning(self, "Warning", "Selected image could not be loaded.")
 
     def get_resolution(self):
         """Process the input resolution and apply it to the selection box"""
